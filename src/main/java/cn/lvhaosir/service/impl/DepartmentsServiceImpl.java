@@ -1,6 +1,6 @@
 package cn.lvhaosir.service.impl;
 
-import cn.lvhaosir.base.impl.BaseServiceImpl;
+import cn.lvhaosir.common.base.impl.BaseServiceImpl;
 import cn.lvhaosir.entity.Departments;
 import cn.lvhaosir.service.DepartmentsService;
 import org.springframework.stereotype.Service;

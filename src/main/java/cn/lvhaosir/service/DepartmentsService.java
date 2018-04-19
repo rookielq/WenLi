@@ -1,6 +1,6 @@
 package cn.lvhaosir.service;
 
-import cn.lvhaosir.base.BaseService;
+import cn.lvhaosir.common.base.BaseService;
 import cn.lvhaosir.entity.Departments;
 
 /**

@@ -1,8 +1,8 @@
-package cn.lvhaosir.base.impl;
+package cn.lvhaosir.common.base.impl;
 
 
-import cn.lvhaosir.base.BaseMapper;
-import cn.lvhaosir.base.BaseService;
+import cn.lvhaosir.common.base.BaseMapper;
+import cn.lvhaosir.common.base.BaseService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import java.util.List;
 public class BaseServiceImpl<T> implements BaseService<T> {
 
     @Autowired
-    private BaseMapper baseMapper;
+    private BaseMapper<T> baseMapper;
 
     @Override
     public PageInfo<T> queryPageList(Integer pageNum, Integer pageSize) {

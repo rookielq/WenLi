@@ -48,7 +48,21 @@ public class StudentsVo {
      */
     private String roomName;
 
-
+    @Override
+    public String toString() {
+        return "StudentsVo{" +
+                "studentId=" + studentId +
+                ", studentCardId='" + studentCardId + '\'' +
+                ", studentName='" + studentName + '\'' +
+                ", studentPassword='" + studentPassword + '\'' +
+                ", departmentId=" + departmentId +
+                ", departmentName='" + departmentName + '\'' +
+                ", classId=" + classId +
+                ", className='" + className + '\'' +
+                ", roomId=" + roomId +
+                ", roomName='" + roomName + '\'' +
+                '}';
+    }
 
     public Integer getStudentId() {
         return studentId;

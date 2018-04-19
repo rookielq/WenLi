@@ -123,4 +123,17 @@ public class Students {
     public void setRoomId(Integer roomId) {
         this.roomId = roomId;
     }
+
+    @Override
+    public String toString() {
+        return "Students{" +
+                "studentId=" + studentId +
+                ", studentCardId='" + studentCardId + '\'' +
+                ", studentName='" + studentName + '\'' +
+                ", studentPassword='" + studentPassword + '\'' +
+                ", departmentId=" + departmentId +
+                ", classId=" + classId +
+                ", roomId=" + roomId +
+                '}';
+    }
 }

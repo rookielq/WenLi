@@ -1,4 +1,4 @@
-package cn.lvhaosir.base;
+package cn.lvhaosir.common.base;
 
 import com.github.pagehelper.PageInfo;
 

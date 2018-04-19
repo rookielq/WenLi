@@ -1,4 +1,4 @@
-package cn.lvhaosir.base;
+package cn.lvhaosir.common.base;
 
 import tk.mybatis.mapper.common.IdsMapper;
 import tk.mybatis.mapper.common.Mapper;
