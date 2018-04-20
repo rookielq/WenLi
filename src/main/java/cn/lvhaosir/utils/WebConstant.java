@@ -18,6 +18,10 @@ public class WebConstant {
      *  没有接收到有效数据
      */
     public static final Integer VALID_DATA=300;
+    /**
+     *  没有数据
+     */
+    public static final Integer NULL_DATA=301;
 
     /**
      *  登录账号密码错误

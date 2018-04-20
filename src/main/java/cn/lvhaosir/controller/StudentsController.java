@@ -21,6 +21,11 @@ public class StudentsController {
     @Autowired
     private StudentsService studentsService;
 
+    /**
+     *  学生登录 , 所需值 studentCardId 、 studentPassword
+     * @param student
+     * @return
+     */
     @RequestMapping(value = "/login" )
     @ResponseBody
     public JsonReturnData login(Students student) {
