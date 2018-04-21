@@ -42,4 +42,20 @@ public class RoomsController {
         return new JsonReturnData<List<Rooms>>("根据楼栋查询出所有宿舍",list);
     }
 
+    /**
+     *  根据RoomId查询出宿舍信息
+     * @param roomId
+     * @return
+     */
+    @RequestMapping( value = "/loadRoom" )
+    @ResponseBody
+    public JsonReturnData loadRoom(Integer roomId) {
+        if(EmptyUtil.isEmpty(roomId) || roomId == 0 ) {
+            return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
+        }
+        Rooms room = roomsService.loadById(roomId);
+        return new JsonReturnData<Rooms>("根据RoomID查询的宿舍信息",room);
+    }
+    
+
 }

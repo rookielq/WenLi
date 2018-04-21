@@ -34,6 +34,12 @@ public class WeeksText {
     @Column(name = "teachers_return_text")
     private String teachersReturnText;
 
+    @Column(name = "create_time")
+    private String createTime;
+
+    @Column(name = "return_time")
+    private String returnTime;
+
     /**
      * @return week_text_id
      */
@@ -186,5 +192,21 @@ public class WeeksText {
      */
     public void setTeachersReturnText(String teachersReturnText) {
         this.teachersReturnText = teachersReturnText;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getReturnTime() {
+        return returnTime;
+    }
+
+    public void setReturnTime(String returnTime) {
+        this.returnTime = returnTime;
     }
 }

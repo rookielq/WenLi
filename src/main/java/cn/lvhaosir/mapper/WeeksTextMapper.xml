@@ -16,5 +16,7 @@
     <result column="love_lose" property="loveLose" jdbcType="TINYINT" />
     <result column="condition_text" property="conditionText" jdbcType="TINYINT" />
     <result column="teachers_return_text" property="teachersReturnText" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+    <result column="return_time" property="returnTime" jdbcType="VARCHAR" />
   </resultMap>
 </mapper>

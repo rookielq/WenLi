@@ -28,5 +28,9 @@ public class WebConstant {
      */
     public static final Integer LOGIN_ERROR=201;
 
+    /**
+     *  周记添加或修改作物错误
+     */
+    public static final Integer WEEKSTEXT_ERROR=401;
 
 }

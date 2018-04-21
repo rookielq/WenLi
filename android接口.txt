@@ -47,3 +47,10 @@ rooms 宿舍
             code：300  message：没有接收到有效数据
             code：301  message：没有数据
             code：200  message：根据楼栋ID查询出所有的宿舍 data：List<Rooms>
+
+    根据RoomId查询出宿舍信息
+        URL： rooms/loadRoom.action
+        所需数据： roomId
+        返回值：
+            code：300  message：没有接收到有效数据
+            code：200  message：根据RoomID查询的宿舍信息 data：Rooms
