@@ -2,6 +2,7 @@ package cn.lvhaosir.controller;
 
 import cn.lvhaosir.entity.WeeksText;
 import cn.lvhaosir.service.WeeksTextService;
+import cn.lvhaosir.utils.DateUtil;
 import cn.lvhaosir.utils.EmptyUtil;
 import cn.lvhaosir.utils.JsonReturnData;
 import cn.lvhaosir.utils.WebConstant;
@@ -31,11 +32,11 @@ public class WeeksTextController {
     @RequestMapping(value = "/save")
     @ResponseBody
     public JsonReturnData save(WeeksText weeksText ) {
-        if (EmptyUtil.isEmpty(weeksText) || EmptyUtil.isEmpty(weeksText.getRoomId()) ) {
+        if (EmptyUtil.isEmpty(weeksText) || EmptyUtil.isEmpty(weeksText.getRoomId()) || weeksText.getRoomId() <= 0  ) {
             return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
         }
         // 取服务器的时间
-        weeksText.setCreateTime(new Date().toString());
+        weeksText.setCreateTime(DateUtil.dateToStrLong(new Date()));
         Integer integer = weeksTextService.saveNoNull(weeksText);
         if (EmptyUtil.isEmpty(integer) || integer <= 0 ) {
             return new JsonReturnData(WebConstant.WEEKSTEXT_ERROR,"添加错误");

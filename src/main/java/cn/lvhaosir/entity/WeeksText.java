@@ -29,7 +29,7 @@ public class WeeksText {
     private Byte loveLose;
 
     @Column(name = "condition_text")
-    private Byte conditionText;
+    private String conditionText;
 
     @Column(name = "teachers_return_text")
     private String teachersReturnText;
@@ -39,6 +39,25 @@ public class WeeksText {
 
     @Column(name = "return_time")
     private String returnTime;
+
+    @Override
+    public String toString() {
+        return "WeeksText{" +
+                "weekTextId=" + weekTextId +
+                ", roomId=" + roomId +
+                ", study=" + study +
+                ", health=" + health +
+                ", returnHome=" + returnHome +
+                ", sleepCondition=" + sleepCondition +
+                ", mood=" + mood +
+                ", consume=" + consume +
+                ", loveLose=" + loveLose +
+                ", conditionText=" + conditionText +
+                ", teachersReturnText='" + teachersReturnText + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", returnTime='" + returnTime + '\'' +
+                '}';
+    }
 
     /**
      * @return week_text_id
@@ -169,14 +188,14 @@ public class WeeksText {
     /**
      * @return condition_text
      */
-    public Byte getConditionText() {
+    public String getConditionText() {
         return conditionText;
     }
 
     /**
      * @param conditionText
      */
-    public void setConditionText(Byte conditionText) {
+    public void setConditionText(String conditionText) {
         this.conditionText = conditionText;
     }
 

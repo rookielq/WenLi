@@ -54,3 +54,13 @@ rooms 宿舍
         返回值：
             code：300  message：没有接收到有效数据
             code：200  message：根据RoomID查询的宿舍信息 data：Rooms
+
+weeksText 周记
+
+    新增
+        URL： weekstext/save.action
+        所需数据： WeeksText
+        返回值：
+            code：300  message：没有接收到有效数据
+            code：401  message：周记添加错误
+            code：200  message：周记添加成功
