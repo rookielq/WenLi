@@ -2,6 +2,7 @@ package cn.lvhaosir.service;
 
 import cn.lvhaosir.common.base.BaseService;
 import cn.lvhaosir.entity.Classes;
+import cn.lvhaosir.entity.vo.ClassRooms;
 
 import java.util.List;
 
@@ -29,4 +30,11 @@ public interface ClassesService extends BaseService<Classes>  {
      * @return
      */
     List<Classes> queryByDepartmentId(Integer departmentId);
+
+    /**
+     *  根据教师ID查询出所有班级，然后查询出所有班级的宿舍
+     * @param teacherId
+     * @return
+     */
+    List<ClassRooms> queryClassRoomsByTeacherId(Integer teacherId);
 }

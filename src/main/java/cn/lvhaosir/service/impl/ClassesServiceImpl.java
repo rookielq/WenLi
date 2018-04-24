@@ -2,9 +2,14 @@ package cn.lvhaosir.service.impl;
 
 import cn.lvhaosir.common.base.impl.BaseServiceImpl;
 import cn.lvhaosir.entity.Classes;
+import cn.lvhaosir.entity.Rooms;
+import cn.lvhaosir.entity.vo.ClassRooms;
 import cn.lvhaosir.service.ClassesService;
+import cn.lvhaosir.service.RoomsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +19,9 @@ import java.util.Map;
  */
 @Service("ClassesService")
 public class ClassesServiceImpl extends BaseServiceImpl<Classes> implements ClassesService {
+
+    @Autowired
+    private RoomsService roomsService;
 
     @Override
     public String getNameById(Integer classId) {
@@ -33,6 +41,22 @@ public class ClassesServiceImpl extends BaseServiceImpl<Classes> implements Clas
         Classes c = new Classes();
         c.setDepartmentId(departmentId);
         return this.queryParamList(c);
+    }
+
+    @Override
+    public List<ClassRooms> queryClassRoomsByTeacherId(Integer teacherId) {
+        List<ClassRooms> list = new ArrayList<ClassRooms>();
+        // 根据教师ID获取所有管理的班级
+        Classes c = new Classes();
+        c.setTeacherId(teacherId);
+        List<Classes> classesList = this.queryParamList(c);
+        Rooms r = new Rooms();
+        for ( Classes classes : classesList ) {
+            // 根据班级的编号，查询出班级下的所有宿舍
+            r.setClassId(classes.getClassId());
+            list.add(new ClassRooms(classes.getClassId(),classes.getClassName(),teacherId,roomsService.queryParamList(r)));
+        }
+        return list;
     }
 
     /**

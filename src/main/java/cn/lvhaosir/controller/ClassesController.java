@@ -1,6 +1,7 @@
 package cn.lvhaosir.controller;
 
 import cn.lvhaosir.entity.Classes;
+import cn.lvhaosir.entity.vo.ClassRooms;
 import cn.lvhaosir.service.ClassesService;
 import cn.lvhaosir.utils.EmptyUtil;
 import cn.lvhaosir.utils.JsonReturnData;
@@ -57,6 +58,25 @@ public class ClassesController {
             return new JsonReturnData(WebConstant.NULL_DATA,"没有数据");
         }
         return new JsonReturnData<List<Classes>>("该教师管理的所有班级",list);
+    }
+
+
+    /**
+     *  根据教师ID查询出所有班级，然后查询出所有班级的宿舍
+     * @param teacherId
+     * @return
+     */
+    @RequestMapping( value = "/queryClassRooms")
+    @ResponseBody
+    public JsonReturnData queryClassRooms(Integer teacherId) {
+        if ( EmptyUtil.isEmpty(teacherId) || teacherId <= 0 ) {
+            return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
+        }
+        List<ClassRooms> list = classesService.queryClassRoomsByTeacherId(teacherId);
+        if(EmptyUtil.isEmpty(list) || list.size() <= 0) {
+            return new JsonReturnData(WebConstant.NULL_DATA,"没有数据");
+        }
+        return new JsonReturnData<List<ClassRooms>>("该教师管理的所有班级以及宿舍",list);
     }
 
 
