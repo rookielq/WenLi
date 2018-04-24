@@ -64,3 +64,21 @@ weeksText 周记
             code：300  message：没有接收到有效数据
             code：401  message：周记添加错误
             code：200  message：周记添加成功
+
+    根据宿舍ID查询改宿舍的所有周记
+        URL： weekstext/queryByRoomId.action
+        所需数据： roomId
+        返回值：
+            code：300  message：没有接收到有效数据
+            code：301  message：没有数据
+            code：200  message：该宿舍所有周记  data： List<WeeksText>
+
+teachers 教师
+
+    登录
+        URL： teachers/login.action
+        所需数据： teacherCardId  teacherPassword
+        返回值：
+            code：300  message：没有接收到有效数据
+            code：201  message：登录账号密码错误
+            code：200  message：登录成功 data：TeachersVo

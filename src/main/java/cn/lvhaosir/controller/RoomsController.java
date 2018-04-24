@@ -30,7 +30,7 @@ public class RoomsController {
     @RequestMapping(value = "/queryByBuildId")
     @ResponseBody
     public JsonReturnData queryByBuildId(Integer buildId) {
-        if(EmptyUtil.isEmpty(buildId) || buildId==0 ) {
+        if(EmptyUtil.isEmpty(buildId) || buildId == 0 ) {
             return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
         }
         Rooms r = new Rooms();

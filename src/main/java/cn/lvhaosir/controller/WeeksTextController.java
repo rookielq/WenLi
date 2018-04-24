@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Date;
 import java.util.List;
 
+import static javafx.scene.input.KeyCode.R;
+
 /**
  * Created by lvhaosir on 2018/4/21.
  */
@@ -45,6 +47,13 @@ public class WeeksTextController {
         return new JsonReturnData(WebConstant.SUCCESS,"添加成功");
     }
 
+    /**
+     * 根据宿舍ID查询改宿舍的所有周记
+     * @param roomId
+     * @return
+     */
+    @RequestMapping(value = "/queryByRoomId")
+    @ResponseBody
     public JsonReturnData queryByRoomId(Integer roomId) {
         if( EmptyUtil.isEmpty(roomId) || roomId <= 0 ) {
             return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
