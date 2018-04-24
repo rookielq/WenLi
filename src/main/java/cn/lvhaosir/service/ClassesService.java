@@ -3,6 +3,8 @@ package cn.lvhaosir.service;
 import cn.lvhaosir.common.base.BaseService;
 import cn.lvhaosir.entity.Classes;
 
+import java.util.List;
+
 /**
  * Created by lvhaosir on 2018/4/18.
  */
@@ -13,4 +15,18 @@ public interface ClassesService extends BaseService<Classes>  {
      * @return
      */
     String getNameById(Integer classId);
+
+    /**
+     *  根据教师ID查询所属教师管理班级
+     * @param teacherId
+     * @return
+     */
+    List<Classes> queryByTeacherId(Integer teacherId);
+
+    /**
+     *  根据系部ID查询出该系部班级
+     * @param departmentId
+     * @return
+     */
+    List<Classes> queryByDepartmentId(Integer departmentId);
 }

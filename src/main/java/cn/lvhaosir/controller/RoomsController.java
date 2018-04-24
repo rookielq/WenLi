@@ -33,9 +33,7 @@ public class RoomsController {
         if(EmptyUtil.isEmpty(buildId) || buildId == 0 ) {
             return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
         }
-        Rooms r = new Rooms();
-        r.setBuildId(buildId);
-        List<Rooms> list = roomsService.queryParamList(r);
+        List<Rooms> list = roomsService.queryByBuildId(buildId);
         if( EmptyUtil.isEmpty(list) || list.size() <= 0 ) {
             return new JsonReturnData(WebConstant.NULL_DATA,"没有数据");
         }

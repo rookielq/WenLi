@@ -20,6 +20,13 @@ public class RoomsServiceImpl extends BaseServiceImpl<Rooms> implements RoomsSer
         return roomsMap.get(roomId);
     }
 
+    @Override
+    public List<Rooms> queryByBuildId(Integer buildId) {
+        Rooms r = new Rooms();
+        r.setBuildId(buildId);
+        return this.queryParamList(r);
+    }
+
     /**
      *  获取宿舍Map
      * @return

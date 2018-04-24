@@ -26,8 +26,17 @@ classes 班级
         URL： classes/queryByDepartmentId.action
         所需数据： departmentId
         返回值：
+            code：300  message：没有接收到有效数据
             code：301  message：没有数据
             code：200  message：该系部下所有班级 data：List<Classes>
+
+    根据系部ID查询所属所有班级：
+        URL： classes/queryByTeacherId.action
+        所需数据： teacherId
+        返回值：
+            code：300  message：没有接收到有效数据
+            code：301  message：没有数据
+            code：200  message：该教师管理的所有班级 data：List<Classes>
 
 builds 楼栋
 

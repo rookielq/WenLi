@@ -21,6 +21,20 @@ public class ClassesServiceImpl extends BaseServiceImpl<Classes> implements Clas
         return classesMap.get(classId);
     }
 
+    @Override
+    public List<Classes> queryByTeacherId(Integer teacherId) {
+        Classes c = new Classes();
+        c.setTeacherId(teacherId);
+        return this.queryParamList(c);
+    }
+
+    @Override
+    public List<Classes> queryByDepartmentId(Integer departmentId) {
+        Classes c = new Classes();
+        c.setDepartmentId(departmentId);
+        return this.queryParamList(c);
+    }
+
     /**
      *  获取班级Map
      * @return

@@ -33,13 +33,30 @@ public class ClassesController {
         if(EmptyUtil.isEmpty(departmentId) || departmentId == 0) {
             return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
         }
-        Classes c = new Classes();
-        c.setDepartmentId(departmentId);
-        List<Classes> list = classesService.queryParamList(c);
+        List<Classes> list = classesService.queryByDepartmentId(departmentId);
         if(EmptyUtil.isEmpty(list) || list.size() <= 0) {
             return new JsonReturnData(WebConstant.NULL_DATA,"没有数据");
         }
         return new JsonReturnData<List<Classes>>("该系部下所有班级",list);
+    }
+
+
+    /**
+     *  根据教师ID查询下面所有班级
+     * @param teacherId
+     * @return
+     */
+    @RequestMapping( value = "/queryByTeacherId")
+    @ResponseBody
+    public JsonReturnData queryByTeacherId(Integer teacherId) {
+        if ( EmptyUtil.isEmpty(teacherId) || teacherId <= 0 ) {
+            return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
+        }
+        List<Classes> list = classesService.queryByTeacherId(teacherId);
+        if(EmptyUtil.isEmpty(list) || list.size() <= 0) {
+            return new JsonReturnData(WebConstant.NULL_DATA,"没有数据");
+        }
+        return new JsonReturnData<List<Classes>>("该教师管理的所有班级",list);
     }
 
 
