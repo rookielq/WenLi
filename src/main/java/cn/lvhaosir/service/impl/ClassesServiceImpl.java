@@ -54,7 +54,7 @@ public class ClassesServiceImpl extends BaseServiceImpl<Classes> implements Clas
         for ( Classes classes : classesList ) {
             // 根据班级的编号，查询出班级下的所有宿舍
             r.setClassId(classes.getClassId());
-            list.add(new ClassRooms(classes.getClassId(),classes.getClassName(),teacherId,roomsService.queryParamList(r)));
+            list.add(new ClassRooms(classes.getClassId(),classes.getClassName(),teacherId,roomsService.queryRoomsVoByParamList(r)));
         }
         return list;
     }

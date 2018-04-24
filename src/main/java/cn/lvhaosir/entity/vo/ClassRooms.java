@@ -15,17 +15,17 @@ public class ClassRooms {
 
     private Integer teacherId;
 
-    private List<Rooms> roomsList;
+    private List<RoomsVo> roomsVoList;
 
 
     public ClassRooms() {
     }
 
-    public ClassRooms(Integer classId, String className, Integer teacherId, List<Rooms> roomsList) {
+    public ClassRooms(Integer classId, String className, Integer teacherId, List<RoomsVo> roomsVoList) {
         this.classId = classId;
         this.className = className;
         this.teacherId = teacherId;
-        this.roomsList = roomsList;
+        this.roomsVoList = roomsVoList;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class ClassRooms {
                 "classId=" + classId +
                 ", className='" + className + '\'' +
                 ", teacherId=" + teacherId +
-                ", roomsList=" + roomsList +
+                ", roomsVoList=" + roomsVoList +
                 '}';
     }
 
@@ -62,11 +62,11 @@ public class ClassRooms {
         this.teacherId = teacherId;
     }
 
-    public List<Rooms> getRoomsList() {
-        return roomsList;
+    public List<RoomsVo> getRoomsVoList() {
+        return roomsVoList;
     }
 
-    public void setRoomsList(List<Rooms> roomsList) {
-        this.roomsList = roomsList;
+    public void setRoomsVoList(List<RoomsVo> roomsList) {
+        this.roomsVoList = roomsList;
     }
 }

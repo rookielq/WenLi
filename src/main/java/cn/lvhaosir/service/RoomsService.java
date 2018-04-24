@@ -2,6 +2,7 @@ package cn.lvhaosir.service;
 
 import cn.lvhaosir.common.base.BaseService;
 import cn.lvhaosir.entity.Rooms;
+import cn.lvhaosir.entity.vo.RoomsVo;
 
 import java.util.List;
 
@@ -23,5 +24,12 @@ public interface RoomsService extends BaseService<Rooms> {
      * @return
      */
     List<Rooms> queryByBuildId(Integer buildId);
+
+    /**
+     *  带有条件参数的查询返回VO
+     * @param room
+     * @return
+     */
+    List<RoomsVo> queryRoomsVoByParamList(Rooms room);
 
 }
