@@ -48,7 +48,7 @@ public class WeeksTextController {
     }
 
     /**
-     * 根据宿舍ID查询改宿舍的所有周记
+     * 根据宿舍ID查询该宿舍的所有周记
      * @param roomId
      * @return
      */

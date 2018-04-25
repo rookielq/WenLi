@@ -1,6 +1,7 @@
 package cn.lvhaosir.controller;
 
 import cn.lvhaosir.entity.Students;
+import cn.lvhaosir.entity.vo.RoomsVo;
 import cn.lvhaosir.entity.vo.StudentsVo;
 import cn.lvhaosir.service.StudentsService;
 import cn.lvhaosir.utils.EmptyUtil;
@@ -10,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * Created by lvhaosir on 2018/4/19.
@@ -40,6 +43,23 @@ public class StudentsController {
         }
     }
 
+    /**
+     *  根据宿舍Id查询宿舍成员
+     * @param roomId
+     * @return
+     */
+    @RequestMapping( value = "/queryByRoomId")
+    @ResponseBody
+    public JsonReturnData queryByRoomId(Integer roomId) {
+        if(EmptyUtil.isEmpty(roomId) || roomId == 0 ) {
+            return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
+        }
+        List<StudentsVo> list = studentsService.queryByRoomId(roomId);
+        if( EmptyUtil.isEmpty(list) || list.size() <= 0 ) {
+            return new JsonReturnData(WebConstant.NULL_DATA,"没有数据");
+        }
+        return new JsonReturnData<List<StudentsVo>>("该宿舍的所有学生",list);
+    }
 
 
 }
