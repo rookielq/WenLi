@@ -47,6 +47,14 @@ public class StudentsVo {
      *  宿舍名称
      */
     private String roomName;
+    /**
+     *  楼栋ID
+     */
+    private Integer buildId;
+    /**
+     *  楼栋名称
+     */
+    private String buildName;
 
     @Override
     public String toString() {
@@ -61,6 +69,8 @@ public class StudentsVo {
                 ", className='" + className + '\'' +
                 ", roomId=" + roomId +
                 ", roomName='" + roomName + '\'' +
+                ", buildId=" + buildId +
+                ", buildName='" + buildName + '\'' +
                 '}';
     }
 
@@ -144,5 +154,19 @@ public class StudentsVo {
         this.roomName = roomName;
     }
 
+    public Integer getBuildId() {
+        return buildId;
+    }
 
+    public void setBuildId(Integer buildId) {
+        this.buildId = buildId;
+    }
+
+    public String getBuildName() {
+        return buildName;
+    }
+
+    public void setBuildName(String buildName) {
+        this.buildName = buildName;
+    }
 }

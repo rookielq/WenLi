@@ -1,12 +1,10 @@
 package cn.lvhaosir.service.impl;
 
 import cn.lvhaosir.common.base.impl.BaseServiceImpl;
+import cn.lvhaosir.entity.Rooms;
 import cn.lvhaosir.entity.Students;
 import cn.lvhaosir.entity.vo.StudentsVo;
-import cn.lvhaosir.service.ClassesService;
-import cn.lvhaosir.service.DepartmentsService;
-import cn.lvhaosir.service.RoomsService;
-import cn.lvhaosir.service.StudentsService;
+import cn.lvhaosir.service.*;
 import cn.lvhaosir.utils.EmptyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +24,8 @@ public class StudentsServiceImpl extends BaseServiceImpl<Students> implements St
     private ClassesService classesService;
     @Autowired
     private RoomsService roomsService;
+    @Autowired
+    private BuildsService buildsService;
 
     @Override
     public StudentsVo login(Students model) {
@@ -92,10 +92,15 @@ public class StudentsServiceImpl extends BaseServiceImpl<Students> implements St
             // 填入宿舍为无
             sv.setRoomId(0);
             sv.setRoomName("无宿舍");
+            sv.setBuildId(0);
+            sv.setBuildName("无楼栋");
         }else {
             String roomName = roomsService.getNameById(students.getRoomId());
             sv.setRoomId(students.getRoomId());
             sv.setRoomName(roomName);
+            Rooms room = roomsService.loadById(students.getRoomId());
+            sv.setBuildId(room.getBuildId());
+            sv.setBuildName(buildsService.getNameById(room.getBuildId()));
         }
         return sv;
     }
