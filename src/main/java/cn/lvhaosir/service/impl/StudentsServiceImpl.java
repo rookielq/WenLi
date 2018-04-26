@@ -56,6 +56,12 @@ public class StudentsServiceImpl extends BaseServiceImpl<Students> implements St
         return list;
     }
 
+    @Override
+    public boolean updateStudents(Students student) {
+        Integer integer = this.updateNoNull(student);
+        return integer>0?true:false;
+    }
+
     /**
      *  将学生对象封装进VO对象
      * @param students

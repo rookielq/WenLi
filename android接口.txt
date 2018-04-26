@@ -19,6 +19,14 @@ students 学生
             code：301  message：没有数据
             code：200  message：该宿舍的所有学生 data：List<StudentsVo>
 
+    学生注册，修改系部班级宿舍信息
+        URL： students/updateStudentByRegister.action
+        所需数据： studentId、departmentId 、 roomId 、 classId
+        返回值：
+            code：300  message：没有接收到有效数据
+            code：200  message：修改成功
+            code：500  message：修改错误，服务器异常
+
 departments 系部
 
     所有系部：

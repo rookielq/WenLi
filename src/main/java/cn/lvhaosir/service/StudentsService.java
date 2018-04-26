@@ -25,4 +25,12 @@ public interface StudentsService extends BaseService<Students> {
      */
     List<StudentsVo> queryByRoomId(Integer roomId);
 
+    /**
+     *  修改学生的 departmentId 、 roomId 、 classId
+     *  所需数据。studentId、departmentId 、 roomId 、 classId
+     * @param student
+     * @return
+     */
+    boolean updateStudents(Students student);
+
 }

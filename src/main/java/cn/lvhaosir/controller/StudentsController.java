@@ -61,5 +61,24 @@ public class StudentsController {
         return new JsonReturnData<List<StudentsVo>>("该宿舍的所有学生",list);
     }
 
+    /**
+     *  修改学生的 departmentId 、 roomId 、 classId
+     *   学生信息注册
+     * @param student
+     * @return
+     */
+    @RequestMapping( value = "/updateStudentByRegister")
+    @ResponseBody
+    public JsonReturnData updateStudentByRegister(Students student) {
+        if( EmptyUtil.isEmpty(student.getStudentId()) || EmptyUtil.isEmpty(student.getDepartmentId()) || EmptyUtil.isEmpty(student.getRoomId()) || EmptyUtil.isEmpty(student.getClassId()) || student.getStudentId() <= 0 || student.getDepartmentId() <= 0 || student.getRoomId() <= 0 || student.getClassId() <= 0 ) {
+            return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
+        }
+        boolean b = studentsService.updateStudents(student);
+        if(b) {
+            return new JsonReturnData(WebConstant.SUCCESS,"修改成功");
+        } else {
+            return new JsonReturnData(WebConstant.ERROR,"修改错误，服务器异常");
+        }
+    }
 
 }
