@@ -42,6 +42,32 @@ public class TeachersController {
         }
     }
 
+    /**
+     *  教师修改账号密码
+     * @param teacher
+     * @param newPassword
+     * @return
+     */
+    @RequestMapping( value = "/updatePassword")
+    @ResponseBody
+    public JsonReturnData updatePassword(Teachers teacher , String newPassword) {
+        if( EmptyUtil.isEmpty(teacher.getTeacherId()) || teacher.getTeacherId() <= 0 || EmptyUtil.isEmpty(teacher.getTeacherPassword()) || EmptyUtil.isEmpty(newPassword) ) {
+            return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
+        }
+        Teachers loadTeacher = teachersService.loadById(teacher.getTeacherId());
+        if ( loadTeacher.getTeacherPassword().equals(newPassword) ){
+            teacher.setTeacherPassword(newPassword);
+            Integer integer = teachersService.updateNoNull(teacher);
+            if (integer <= 0) {
+                return new JsonReturnData(WebConstant.ERROR,"修改错误，服务器异常");
+            } else {
+                return new JsonReturnData(WebConstant.SUCCESS,"修改成功");
+            }
+        }else {
+            return new JsonReturnData(WebConstant.UPDATE_PWD_ERROR,"旧密码错误");
+        }
+    }
+
 
 
 

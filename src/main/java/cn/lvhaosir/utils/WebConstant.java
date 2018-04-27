@@ -29,6 +29,11 @@ public class WebConstant {
     public static final Integer LOGIN_ERROR=201;
 
     /**
+     *  修改密码旧密码错误
+     */
+    public static final Integer UPDATE_PWD_ERROR=202;
+
+    /**
      *  周记添加或修改作物错误
      */
     public static final Integer WEEKSTEXT_ERROR=401;

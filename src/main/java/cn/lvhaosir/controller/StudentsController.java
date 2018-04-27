@@ -81,4 +81,31 @@ public class StudentsController {
         }
     }
 
+    /**
+     *  学生修改密码
+     * @param student
+     * @param newPassword
+     * @return
+     */
+    @RequestMapping( value = "/updatePassword")
+    @ResponseBody
+    public JsonReturnData updatePassword(Students student , String newPassword) {
+        if ( EmptyUtil.isEmpty(student.getStudentId()) || student.getStudentId() <= 0 || EmptyUtil.isEmpty(newPassword) || EmptyUtil.isEmpty(student.getStudentPassword()) ) {
+            return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
+        }
+        // 根据id查询出对象
+        Students loadStudent = studentsService.loadById(student.getStudentId());
+        if ( loadStudent.getStudentPassword().equals(newPassword)) {
+            student.setStudentPassword(newPassword);
+            Integer integer = studentsService.updateNoNull(student);
+            if (integer <= 0) {
+                return new JsonReturnData(WebConstant.ERROR,"修改错误，服务器异常");
+            } else {
+                return new JsonReturnData(WebConstant.SUCCESS,"修改成功");
+            }
+        }else {
+            return new JsonReturnData(WebConstant.UPDATE_PWD_ERROR,"旧密码错误");
+        }
+    }
+
 }
