@@ -66,4 +66,42 @@ public class WeeksTextController {
     }
 
 
+    /**
+     *  根据周记编号查询出周记信息
+     * @param weekTextId
+     * @return
+     */
+    @RequestMapping(value = "/queryById")
+    @ResponseBody
+    public JsonReturnData queryById(Integer weekTextId) {
+        if( EmptyUtil.isEmpty(weekTextId) || weekTextId <= 0 ) {
+            return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
+        }
+        WeeksText weeksText = weeksTextService.loadById(weekTextId);
+        if (EmptyUtil.isEmpty(weeksText)) {
+            return new JsonReturnData(WebConstant.NULL_DATA,"没有数据");
+        }
+        return new JsonReturnData<WeeksText>(WebConstant.SUCCESS,"该周记详情");
+    }
+
+    /**
+     *  教师回复消息
+     * @param weeksText
+     * @return
+     */
+    @RequestMapping(value = "/updateReturnText")
+    @ResponseBody
+    public JsonReturnData updateReturnText(WeeksText weeksText) {
+        if (EmptyUtil.isEmpty(weeksText.getWeekTextId()) || weeksText.getWeekTextId() <= 0 || EmptyUtil.isEmpty(weeksText.getTeachersReturnText()) ) {
+            return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
+        }
+        Integer integer = weeksTextService.updateNoNull(weeksText);
+        if(integer <= 0) {
+            return new JsonReturnData<WeeksText>(WebConstant.ERROR,"回复失败，服务器异常");
+        }else {
+            return new JsonReturnData<WeeksText>(WebConstant.SUCCESS,"回复成功");
+        }
+    }
+
+
 }

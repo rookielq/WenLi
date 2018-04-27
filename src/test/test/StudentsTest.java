@@ -1,8 +1,12 @@
 package test;
 
 import cn.lvhaosir.entity.Students;
+import cn.lvhaosir.entity.WeeksText;
 import cn.lvhaosir.entity.vo.StudentsVo;
+import cn.lvhaosir.entity.vo.WeeksTextVo;
+import cn.lvhaosir.mapper.WeeksTextMapper;
 import cn.lvhaosir.service.StudentsService;
+import cn.lvhaosir.service.TeachersService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,20 +23,14 @@ import java.util.List;
 public class StudentsTest {
 
     @Autowired
-    private StudentsService studentsService;
+    private TeachersService teachersService;
+
 
     @Test
-    public void loginTest() {
-        Students student = new Students();
-        student.setStudentCardId("201540460");
-        student.setStudentPassword("113");
-        Students students = studentsService.loadByParam(student);
-        System.out.println(students);
-        StudentsVo login = studentsService.login(student);
-        System.out.println(login);
-//        List<Students> studentses = studentsService.queryAllList();
-//        System.out.println(studentses);
+    public void myTest() {
 
+        List<WeeksTextVo> weeksTextList = teachersService.queryNoReturn(1);
+        System.out.println(weeksTextList);
 
     }
 

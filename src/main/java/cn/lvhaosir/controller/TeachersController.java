@@ -2,6 +2,7 @@ package cn.lvhaosir.controller;
 
 import cn.lvhaosir.entity.Teachers;
 import cn.lvhaosir.entity.vo.TeachersVo;
+import cn.lvhaosir.entity.vo.WeeksTextVo;
 import cn.lvhaosir.service.TeachersService;
 import cn.lvhaosir.utils.EmptyUtil;
 import cn.lvhaosir.utils.JsonReturnData;
@@ -10,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * Created by lvhaosir on 2018/4/24.
@@ -68,7 +71,23 @@ public class TeachersController {
         }
     }
 
-
+    /**
+     *  根据教师id查询出该教师管理宿舍下的所有未读周记
+     * @param teacherId
+     * @return
+     */
+    @RequestMapping( value = "/queryNoReturn")
+    @ResponseBody
+    public JsonReturnData queryNoReturn(Integer teacherId) {
+        if ( EmptyUtil.isEmpty(teacherId) || EmptyUtil.isEmpty(teacherId) ) {
+            return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
+        }
+        List<WeeksTextVo> weeksTextVoList = teachersService.queryNoReturn(teacherId);
+        if (EmptyUtil.isEmpty(weeksTextVoList) || weeksTextVoList.size() <= 0) {
+            return new JsonReturnData(WebConstant.NULL_DATA,"没有数据");
+        }
+        return new JsonReturnData<List<WeeksTextVo>>("该教师所管理宿舍下未读周记",weeksTextVoList);
+    }
 
 
 

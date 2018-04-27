@@ -29,6 +29,20 @@ public class Rooms {
     @Column(name = "student_id")
     private Integer studentId;
 
+    @Override
+    public String toString() {
+        return "Rooms{" +
+                "roomId=" + roomId +
+                ", roomName='" + roomName + '\'' +
+                ", buildId=" + buildId +
+                ", buildLayer=" + buildLayer +
+                ", departmentId=" + departmentId +
+                ", classId=" + classId +
+                ", teacherId=" + teacherId +
+                ", studentId=" + studentId +
+                '}';
+    }
+
     /**
      * @return room_id
      */

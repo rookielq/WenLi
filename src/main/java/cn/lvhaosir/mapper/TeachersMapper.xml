@@ -11,4 +11,7 @@
     <result column="teacher_password" property="teacherPassword" jdbcType="VARCHAR" />
     <result column="department_id" property="departmentId" jdbcType="INTEGER" />
   </resultMap>
+
+
+
 </mapper>
