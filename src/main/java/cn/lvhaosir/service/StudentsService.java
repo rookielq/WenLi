@@ -33,4 +33,11 @@ public interface StudentsService extends BaseService<Students> {
      */
     boolean updateStudents(Students student);
 
+    /**
+     *  还原密码
+     * @param studentId
+     * @return
+     */
+    boolean resetPassword(Integer studentId);
+
 }

@@ -108,4 +108,24 @@ public class StudentsController {
         }
     }
 
+
+    /**
+     *  还原密码
+     * @param studentId
+     * @return
+     */
+    @RequestMapping( value = "/resetPassword")
+    @ResponseBody
+    public JsonReturnData resetPassword(Integer studentId , Integer teacherId) {
+        if(EmptyUtil.isEmpty(studentId) || studentId <= 0 || EmptyUtil.isEmpty(teacherId) || teacherId <= 0 ) {
+            return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
+        }
+        boolean b = studentsService.resetPassword(studentId);
+        if (b) {
+            return new JsonReturnData(WebConstant.SUCCESS,"还原成功");
+        }else {
+            return new JsonReturnData(WebConstant.ERROR,"还原失败，服务器异常");
+        }
+    }
+
 }

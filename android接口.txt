@@ -35,6 +35,14 @@ students 学生
             code：202  message：旧密码错误
             code：500  message：修改错误，服务器异常
             code：200  message：修改成功
+    还原学生密码：
+        URL： students/resetPassword.action
+        所需数据： studentId 、 teacherId
+        返回值：
+            code：300  message：没有接收到有效数据
+            code：500  message：还原失败，服务器异常
+            code：200  message：还原成功
+
 
 departments 系部
 
@@ -158,6 +166,8 @@ teachers 教师
             code：300  message：没有接收到有效数据
             code：301  message：没有数据
             code：200  message：该教师所管理宿舍下未读周记 data：List<WeeksTextVo>
+
+
 
 ClassRooms
 

@@ -60,6 +60,13 @@ public class RoomsController {
     }
 
 
+    /**
+     *  修改寝室长
+     * @param room
+     * @return
+     */
+    @RequestMapping( value = "/updateStudentId" )
+    @ResponseBody
     public JsonReturnData updateStudentId(Rooms room ){
         if (EmptyUtil.isEmpty(room.getRoomId()) || room.getRoomId() <= 0 || room.getStudentId() <= 0 ) {
             return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");

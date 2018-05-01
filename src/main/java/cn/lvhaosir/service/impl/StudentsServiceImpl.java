@@ -62,6 +62,15 @@ public class StudentsServiceImpl extends BaseServiceImpl<Students> implements St
         return integer>0?true:false;
     }
 
+    @Override
+    public boolean resetPassword(Integer studentId) {
+        Students s = new Students();
+        s.setStudentId(studentId);
+        s.setStudentPassword("111");
+        Integer integer = this.updateNoNull(s);
+        return integer>0?true:false;
+    }
+
     /**
      *  将学生对象封装进VO对象
      * @param students
