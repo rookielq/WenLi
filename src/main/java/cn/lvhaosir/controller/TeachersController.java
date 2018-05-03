@@ -58,7 +58,7 @@ public class TeachersController {
             return new JsonReturnData(WebConstant.VALID_DATA,"没有接收到有效数据");
         }
         Teachers loadTeacher = teachersService.loadById(teacher.getTeacherId());
-        if ( loadTeacher.getTeacherPassword().equals(newPassword) ){
+        if ( loadTeacher.getTeacherPassword().equals(teacher.getTeacherPassword()) ){
             teacher.setTeacherPassword(newPassword);
             Integer integer = teachersService.updateNoNull(teacher);
             if (integer <= 0) {

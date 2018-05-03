@@ -95,7 +95,7 @@ public class StudentsController {
         }
         // 根据id查询出对象
         Students loadStudent = studentsService.loadById(student.getStudentId());
-        if ( loadStudent.getStudentPassword().equals(newPassword)) {
+        if ( loadStudent.getStudentPassword().equals(student.getStudentPassword()) ) {
             student.setStudentPassword(newPassword);
             Integer integer = studentsService.updateNoNull(student);
             if (integer <= 0) {
