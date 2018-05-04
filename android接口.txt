@@ -70,6 +70,13 @@ classes 班级
             code：300  message：没有接收到有效数据
             code：301  message：没有数据
             code：200  message：该教师管理的所有班级 data：List<Classes>
+    获取该教师管理的所有班级的所有宿舍
+        URL： classes/queryClassRooms.action
+        所需数据： teacherId
+        返回值：
+            code：300  message：没有接收到有效数据
+            code：301  message：没有数据
+            code：200  message：该教师管理的所有班级以及宿舍 data：List<ClassRooms>
 
 builds 楼栋
 
@@ -169,12 +176,15 @@ teachers 教师
 
 
 
-ClassRooms
+common 公用
 
-    获取该教师管理的所有班级的所有宿舍
-        URL： classes/queryClassRooms.action
-        所需数据： teacherId
+    反馈信息
+        URL： common/sendEmail.action
+        所需数据： id 、 content
         返回值：
             code：300  message：没有接收到有效数据
-            code：301  message：没有数据
-            code：200  message：该教师管理的所有班级以及宿舍 data：List<ClassRooms>
+            code：200  message：发送成功
+            code：500  message：发送失败，服务器异常
+
+
+

@@ -15,7 +15,7 @@
 
 
     <!-- 扫包 -->
-    <context:component-scan base-package="cn.lvhaosir.controller"/>
+    <context:component-scan base-package="cn.lvhaosir"/>
 
     <!-- start json -->
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
