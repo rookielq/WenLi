@@ -37,4 +37,5 @@ public interface ClassesService extends BaseService<Classes>  {
      * @return
      */
     List<ClassRooms> queryClassRoomsByTeacherId(Integer teacherId);
+
 }

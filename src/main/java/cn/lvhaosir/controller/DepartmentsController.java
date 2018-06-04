@@ -1,5 +1,6 @@
 package cn.lvhaosir.controller;
 
+import cn.lvhaosir.annotation.SystemControllerLog;
 import cn.lvhaosir.entity.Departments;
 import cn.lvhaosir.service.DepartmentsService;
 import cn.lvhaosir.utils.EmptyUtil;
@@ -28,6 +29,7 @@ public class DepartmentsController {
      */
     @RequestMapping(value = "/queryAll")
     @ResponseBody
+    @SystemControllerLog(description="获取所有系部信息")
     public JsonReturnData queryAll() {
         List<Departments> list = departmentsService.queryAllList();
         if(EmptyUtil.isEmpty(list) || list.size()<=0 ) {

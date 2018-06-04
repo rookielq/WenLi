@@ -32,4 +32,10 @@ public interface RoomsService extends BaseService<Rooms> {
      */
     List<RoomsVo> queryRoomsVoByParamList(Rooms room);
 
+    /**
+     *  为了避免需要填写数据,所以根据学生提交去修改
+     * @param room
+     */
+    void updateRooms(Rooms room);
+
 }

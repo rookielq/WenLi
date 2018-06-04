@@ -79,4 +79,18 @@ public class RoomsController {
         }
     }
 
+    /**
+     *  修改宿舍的信息，教师ID与系部ID
+     * @param room
+     */
+    @RequestMapping( value = "/updateRoom" )
+    @ResponseBody
+    public void updateRoom(Rooms room) {
+        if (EmptyUtil.isEmpty(room.getRoomId()) || room.getRoomId() <= 0) {
+
+        } else {
+            roomsService.updateRooms(room);
+        }
+    }
+
 }
