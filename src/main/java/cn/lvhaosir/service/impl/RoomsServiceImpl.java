@@ -4,7 +4,9 @@ import cn.lvhaosir.common.base.impl.BaseServiceImpl;
 import cn.lvhaosir.entity.Rooms;
 import cn.lvhaosir.entity.vo.RoomsVo;
 import cn.lvhaosir.service.BuildsService;
+import cn.lvhaosir.service.ClassesService;
 import cn.lvhaosir.service.RoomsService;
+import cn.lvhaosir.utils.EmptyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,8 @@ public class RoomsServiceImpl extends BaseServiceImpl<Rooms> implements RoomsSer
 
     @Autowired
     private BuildsService buildsService;
+    @Autowired
+    private ClassesService classesService;
 
     @Override
     public String getNameById(Integer roomId) {
@@ -47,6 +51,20 @@ public class RoomsServiceImpl extends BaseServiceImpl<Rooms> implements RoomsSer
         }
         return list;
 
+    }
+
+    @Override
+    public void updateRooms(Rooms room) {
+        Integer roomId = room.getRoomId();
+        Rooms loadRoom = this.loadById(roomId);
+        if (EmptyUtil.isEmpty(loadRoom.getDepartmentId()) || loadRoom.getDepartmentId() <= 0 || EmptyUtil.isEmpty(loadRoom.getClassId()) || loadRoom.getClassId() <= 0  ) {
+            // || EmptyUtil.isEmpty(loadRoom.getTeacherId()) || loadRoom.getTeacherId() <= 0
+            // 根据classId去查找teacherId
+            Integer teacherId = classesService.loadById(room.getClassId()).getTeacherId();
+            room.setTeacherId(teacherId);
+            // 如果为空 ， 就修改
+            this.updateNoNull(room);
+        }
     }
 
     private RoomsVo pinJie(Rooms room) {
