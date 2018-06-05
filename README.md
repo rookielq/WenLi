@@ -41,31 +41,32 @@
 
 #### 学生界面
 <div align="center">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/0.png"  height="210" width="372">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/1.png"  height="210" width="372">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/2.png"  height="210" width="372">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/0.png"  height="372" width="210">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/1.png"  height="372" width="210">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/2.png"  height="372" width="210">
 </div>
 <div align="center">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/3.png"  height="210" width="372">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/4.png"  height="210" width="372">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/5.png"  height="210" width="372">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/3.png"  height="372" width="210">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/4.png"  height="372" width="210">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/5.png"  height="372" width="210">
 </div>
 <div align="center">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/6.png"  height="210" width="372">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/7.png"  height="210" width="372">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/8.png"  height="210" width="372">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/6.png"  height="372" width="210">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/7.png"  height="372" width="210">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/8.png"  height="372" width="210">
 </div>
 <div align="center">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/9.png"  height="210" width="372">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/9.png"  height="372" width="210">
 </div>
-#### 教师界面
+
+####  教师界面
 <div align="center">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/teachers/22.png"  height="210" width="372">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/teachers/21.png"  height="210" width="372">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/teachers/23.png"  height="210" width="372">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/teachers/22.png"  height="372" width="210">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/teachers/21.png"  height="372" width="210">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/teachers/23.png"  height="372" width="210">
 </div>
 <div align="center">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/teachers/24.png"  height="210" width="372">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/teachers/25.png"  height="210" width="372">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/teachers/26.png"  height="210" width="372">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/teachers/24.png"  height="372" width="210">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/teachers/25.png"  height="372" width="210">
+<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/teachers/26.png"  height="372" width="210">
 </div>
