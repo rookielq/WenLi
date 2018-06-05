@@ -51,13 +51,12 @@
 <img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/5.png"  height="372" width="210">
 </div>
 <div align="center">
-<img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/6.png"  height="372" width="210">
+
 <img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/7.png"  height="372" width="210">
 <img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/8.png"  height="372" width="210">
-</div>
-<div align="center">
 <img src="https://github.com/UnreliableLaoXiao/Screenshots/blob/master/weili/students/9.png"  height="372" width="210">
 </div>
+
 
 ####  教师界面
 <div align="center">
